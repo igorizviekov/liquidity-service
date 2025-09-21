@@ -35,7 +35,7 @@ export async function calculateSlippageQuote(
 	const spotPrice = reserveBuy.mul(PRECISION_BASE).div(reserveSell);
 
 	const minTradeAmount = ethers.utils.parseUnits('0.001', sellTokenDecimals);
-	const maxTradePercent = 5;
+	const maxTradePercent = targetSlippage >= 0.1 ? 60 : 20;
 	const maxTradeAmount = reserveSell.mul(maxTradePercent).div(100);
 
 	let low = minTradeAmount;

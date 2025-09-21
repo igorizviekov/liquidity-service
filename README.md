@@ -132,10 +132,6 @@ curl "http://localhost:3000/liquidity?sellToken=0x8ac76a51cc950d9822d68b83fe1ad9
 
 ```
 
-## Known Limitations
-
-Stablecoin-to-stablecoin pairs (e.g., USDC/USDT, DAI/USDT) may show inflated slippage due to limited liquidity on Uniswap V2 pools.
-
 ## Configuration
 
 Create a `.env` file for custom RPC endpoints:
@@ -152,11 +148,18 @@ PORT=3000
 NODE_ENV=development
 ```
 
+## Testing
+
+**Run tests in watch mode:**
+
+```bash
+npm run test
+```
+
 ## Roadmap
 
 **Short Term**:
 
-- [ ] Uniswap V3 integration for better stablecoin pricing
 - [ ] Multi-DEX price comparison and best route selection
 - [ ] Adding support for more chains
 
@@ -168,7 +171,6 @@ NODE_ENV=development
 **Long Term**:
 
 - [ ] Cross-chain liquidity analysis
-- [ ] MEV-aware routing
 - [ ] Integration with major aggregators
 
 ## License
